@@ -1,7 +1,7 @@
 deviantMenu
 ===========
 
-deviantMenu creates an images rotator that can be easily customized
+deviantMenu creates a dynamic menu from a ul list and has a similar effect as the devianttart menu <http://www.devianttart.com>
 
 ![Screenshot](http://www.developer.ps/moo/deviantmenu/images/sc1.jpg)
 
