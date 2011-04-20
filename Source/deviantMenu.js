@@ -11,7 +11,7 @@ license:
 requires:
   core/1.2.3:   [Core,Browser,Array,Function,Number,String,Hash,Element,Class,Class_Extras,Element_Style,Fx,Fx_CSS,Event,Element_Event, DomReady]
 provides:
-  - Sowar
+  - deviantMenu
 ...
 */
 var deviantMenu = new Class({
