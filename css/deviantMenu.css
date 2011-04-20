@@ -1,0 +1,92 @@
+#deviantMenu-main-conatiner
+{
+    overflow: hidden; 
+	width: 171px;
+	height: auto;
+	background-color: #1D1D20;
+	position: relative;
+	/*direction: rtl;*/
+	visibility: hidden;
+	border: solid 4px #000000;
+}
+.warpper1
+{
+	position: relative; 
+}
+.deviantMenu-menu-item
+{
+    position: absolute;
+    width: 171px;/*should be as width in deviantMenu-main-conatiner*/
+}
+.hide
+{
+    display: none;
+}
+
+.menuList
+{
+    list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.menuList li
+{
+	position: relative;
+	font-weight: bold;
+	height: 22px;
+	margin: 0;
+	padding: 5px;
+	color: #FFFFFF;
+	cursor: pointer;
+	background: #3F3F3F;
+	border-bottom: solid 1px #000000;
+}
+
+.menuList li a
+{
+    color: #FFFFFF;
+}
+
+.left
+{
+    position: absolute;
+    right: 3px;
+    top: 6px;
+    background: url('../images/rarrow.png');
+    background-repeat: no-repeat; 
+    float: right;
+    width: 8px;
+    height: 10px;   
+}
+.right
+{
+    position: absolute;
+    left: 3px;
+    top: 6px;
+    background-image: url('../images/larrow.png');
+    background-repeat: no-repeat;
+    float: left;
+    width: 8px;
+    height: 10px;  
+}
+.back
+{
+    display: block;
+    cursor: pointer;
+    height: 22px;
+    padding: 5px 15px 5px 15px;    
+    color: #FFFFFF;
+    background: #1D1D20;
+    width: 169px;
+    font-weight: bold;
+    border-bottom: solid 1px #C3C3C3;
+}
+.back:hover
+{
+    color: #FFFFFF;
+    text-decoration: none;    
+}
+.back:active
+{
+    color: #FFFFFF;
+}
