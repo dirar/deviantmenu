@@ -47,11 +47,11 @@ var deviantMenu = new Class({
         //create a unique id for the ul elements
         this.menuElement.getElements('ul').each(function(el, i){
             el.set('id', this.options.idPrefix + i);
-        }.bind(this));
+        }, this);
         //create a separat div for each list without children
         this.menuElement.getElements('ul').each(function(el, i){
             this.parseElements(el, (el.getParent('ul') ? el.getParent('ul').get('id') : null));
-        }.bind(this));
+        }, this);
         this.menuElement.getElement('ul').destroy();
         this.breadcrumbs = null;
         this.menuWarpper.inject(this.menuElement);
@@ -66,6 +66,7 @@ var deviantMenu = new Class({
         this.menuElement.setStyle('visibility', 'visible');
     },
     parseElements: function(ulO, parentID){
+        var self = this;
         var id = ulO.get('id');//parent ul id
         var divItem = new Element('div', {'class' : this.options.itemContainer + " level" + this.options.idPrefix + ulO.getParents('ul').length, 'id': id + 'div'});//new list container
         //this.menuElement.addEvent('mouseout', this.scroll.stop.bind(this.scroll));  
@@ -90,10 +91,10 @@ var deviantMenu = new Class({
                         }
                     ).inject(breadcrumbslnks);
                     link.addEvent('click', function(event){
-                        this.backTo($(event.target.get('id') + 'div'));                                                
-                    }.bind(this));                    
+                        self.backTo($(event.target.get('id') + 'div'));                                                
+                    });                    
                     if(i < ulO.getParents('ul').length){
-                        new Element('span', {'html' : this.options.breadcrumbsSeparator ,'class' : 'breadcrumbs-separator'}).inject(breadcrumbslnks);
+                        new Element('span', {'html' : self.options.breadcrumbsSeparator ,'class' : 'breadcrumbs-separator'}).inject(breadcrumbslnks);
                     }
                 }
                 breadcrumbslnks.inject(header);                
@@ -102,8 +103,8 @@ var deviantMenu = new Class({
                 var link = new Element('a', {'text' : parent.get('text').trim(), 'class' : 'back'}).inject(header);
                 new Element('div', {'class' : (this.options.direction == 'right') ? 'left' : 'right'}).inject(link);
                 link.addEvent('click', function(event){
-                     this.backTo($(parentID + 'div'));
-                }.bind(this));                
+                     self.backTo($(parentID + 'div'));
+                });                
             }
             header.inject(divItem);
         }
@@ -129,24 +130,24 @@ var deviantMenu = new Class({
                     event = new Event(event);
                     if($(event.target).get('tag') != 'a'){//ignore effect if element is a link
                         var child = $(childID);
-                        $$('.level' + this.options.idPrefix + pnum).addClass('hide');//hide all containers on the same level
+                        $$('.level' + self.options.idPrefix + pnum).addClass('hide');//hide all containers on the same level
                         child.removeClass('hide');
-                        //this.menuWarpper.tween(this.options.direction, this.multipleBy * child.offsetLeft);
-                        this.menuWarpper.tween(this.options.direction, [this.menuWarpper.offsetLeft, this.multipleBy * child.offsetLeft]);
-                        if(this.options.updateHeight){this.menuElement.tween('height', child.offsetHeight);}                                                
-                        if(this.options.carouselScroller){
+                        //self.menuWarpper.tween(this.options.direction, this.multipleBy * child.offsetLeft);
+                        self.menuWarpper.tween(self.options.direction, [self.menuWarpper.offsetLeft, self.multipleBy * child.offsetLeft]);
+                        if(self.options.updateHeight){self.menuElement.tween('height', child.offsetHeight);}                                                
+                        if(self.options.carouselScroller){
                             scroll.stop.bind(scroll);
                         }
                     }
-                }.bind(this));
-                new Element('div', {'class' : this.options.direction}).inject(li);
+                });
+                new Element('div', {'class' : self.options.direction}).inject(li);
             }
             //fire click event on link click
             li.addEvent('click', function(event){
-                if($(event.target).get('tag') == 'a'){this.fireEvent('click');}
-            }.bind(this));
+                if($(event.target).get('tag') == 'a'){self.fireEvent('click');}
+            });
             li.inject(ul);
-        }.bind(this));
+        });
         ul.inject(divItem);
         divItem.inject(this.menuWarpper);
     }, backTo: function(parent){
