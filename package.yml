@@ -1,0 +1,8 @@
+name:  deviantmenu
+author:  dirarko
+current:  2.0
+category: Widgets
+sources: ["Source/deviantMenu.js"]
+tags:  [menu,navigation]
+demo:  http://developer.ps/moo/deviantmenu
+docs:  http://developer.ps/moo/deviantmenu
