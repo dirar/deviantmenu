@@ -1,12 +1,7 @@
 name:  deviantmenu
 author:  dirarko
-<<<<<<< HEAD
 current:  2.0
 category: Widgets
-=======
-current:  1
-category:  Widgets
->>>>>>> c487b599697adc9d4395a93b6774d16f2d00ca91
 sources: ["Source/deviantMenu.js"]
 tags:  [menu,navigation]
 demo:  http://developer.ps/moo/deviantmenu
