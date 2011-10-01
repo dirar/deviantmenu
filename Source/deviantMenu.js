@@ -32,13 +32,14 @@ var deviantMenu = new Class({
             scrollerArea: 60,
             scrollerVelocity: 0.3
         }, options);
+        this.instantcount = 0;
         this.breadcrumbs = [];
         this.menuElement = element;
         if(typeOf(this.menuElement) != 'element'){this.menuElement = $(element);}
         this.options.position  = this.menuElement.getSize().x;
         this.multipleBy = (this.options.direction == 'right') ? 1 : -1;
         if(this.options.updateHeight){this.menuElement.set('tween', {duration: this.options.duration});}
-        this.menuWarpper = new Element('div', {'class' : 'warpper1', 'id' : 'deviantMenu-warpper', 'tween' : {duration: this.options.duration}});
+        this.menuWarpper = new Element('div', {'class' : 'warpper1', 'id' : 'deviantMenu-warpper' + this.options.idPrefix, 'tween' : {duration: this.options.duration}});
         this.scroll = null;
         this.constructMenu();
     },
@@ -66,7 +67,7 @@ var deviantMenu = new Class({
     },
     parseElements: function(ulO, parentID){
         var id = ulO.get('id');//parent ul id
-        var divItem = new Element('div', {'class' : this.options.itemContainer + " level" + ulO.getParents('ul').length, 'id': id + 'div'});//new list container
+        var divItem = new Element('div', {'class' : this.options.itemContainer + " level" + this.options.idPrefix + ulO.getParents('ul').length, 'id': id + 'div'});//new list container
         //this.menuElement.addEvent('mouseout', this.scroll.stop.bind(this.scroll));  
         
         if(!ulO.getElement('.selected')){divItem.addClass('hide');}
@@ -128,7 +129,7 @@ var deviantMenu = new Class({
                     event = new Event(event);
                     if($(event.target).get('tag') != 'a'){//ignore effect if element is a link
                         var child = $(childID);
-                        $$('.level' + pnum).addClass('hide');//hide all containers on the same level
+                        $$('.level' + this.options.idPrefix + pnum).addClass('hide');//hide all containers on the same level
                         child.removeClass('hide');
                         //this.menuWarpper.tween(this.options.direction, this.multipleBy * child.offsetLeft);
                         this.menuWarpper.tween(this.options.direction, [this.menuWarpper.offsetLeft, this.multipleBy * child.offsetLeft]);

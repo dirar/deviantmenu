@@ -2,7 +2,18 @@
 {
     overflow: hidden; 
 	width: 171px;
-	height: 260px;
+	height: 231px;
+	background-color: #1D1D20;
+	position: relative;
+	/*direction: rtl;
+	visibility: hidden;*/
+	border: solid 4px #000000;
+}
+#deviantMenu-main-conatiner2
+{
+    overflow: hidden; 
+	width: 171px;
+	height: 300px;
 	background-color: #1D1D20;
 	position: relative;
 	/*direction: rtl;

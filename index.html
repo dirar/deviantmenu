@@ -11,9 +11,9 @@
 		<script type="text/javascript" src="Source/mootools-more-1.4.0.1.js"></script>
 		<script type="text/javascript" src="Source/deviantMenu.js"></script>
 		<script type="text/javascript">
-		    var devmenu = null;
 		    window.addEvent('domready', function(){
-		        devmenu = new deviantMenu('deviantMenu-main-conatiner');
+		        var devmenu = new deviantMenu('deviantMenu-main-conatiner');
+		        var devmenu2 = new deviantMenu('deviantMenu-main-conatiner2', {'updateHeight' : false, 'carouselScroller': true, 'usebreadcrumbs' : false, 'idPrefix' : 'deviantMenuid2'});
 		    });
 		</script>	
     </head>
@@ -23,7 +23,57 @@
                 <h1>a Javascript class for Mootools framework that creates an unlimited dynamic menu from a ul lists and has a similar effect as the deviantart menu http://www.deviantart.com</h1>
             </div>
             <div id="content">
-                <div id="deviantMenu-main-conatiner">
+                <div id="deviantMenu-main-conatiner" style="float: left;margin-right: 20px;">
+                    <ul>
+                        <li>
+                            Menu 1
+                            <ul>
+                                <li>Menu 1-1
+                                    <ul>
+                                        <li><a href="http://www.mootools.net">Menu 1-1-1</a></li>
+                                        <li><a href="#">Menu 1-1-2</a></li>
+                                    </ul>                                         
+                                </li>
+                                <li>
+                                    Menu 1-2                                        
+                                </li>
+                                <li >Menu 1-3
+                                    <ul>
+                                        <li>Menu 1-3-1
+                                            <ul>
+                                                <li>Menu 1-3-1-1</li>
+                                                <li>Menu 1-3-1-2</li>
+                                            </ul>
+                                        </li>
+                                        <li>Menu 1-3-2
+                                            <ul>
+                                                <li>Menu 1-3-2-1</li>
+                                                <li>Menu 1-3-2-2</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Menu 1-4                                        
+                                </li>
+                                <li>
+                                    Menu 1-5                                        
+                                </li>
+                            </ul>     
+                        </li>
+                        <li>Menu 3</li>
+                        <li>Menu 4</li>
+                        <li>Menu 5</li>
+                        <li>Menu 6</li>
+                        <li>Menu 7</li>
+                        <li>Menu 8
+                            <ul>
+                                <li>Menu 8-1</li>
+                            </ul>
+                        </li>                        
+                    </ul>
+                </div>
+                <div id="deviantMenu-main-conatiner2">
                     <ul>
                         <li>
                             Menu 1
