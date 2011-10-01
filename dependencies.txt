@@ -13,4 +13,7 @@
 [x]Fx_CSS
 [x]Event
 [x]Element_Event
+<<<<<<< HEAD
 [x]Scroller
+=======
+>>>>>>> c487b599697adc9d4395a93b6774d16f2d00ca91

@@ -20,7 +20,11 @@ How to use
 	</li>
 	<li>
 		window.addEvent('domready', function(){
+<<<<<<< HEAD
 			var devmenu = new deviantMenu('deviantMenu-main-conatiner');
+=======
+                var devmenu = new deviantMenu('deviantMenu-main-conatiner');
+>>>>>>> c487b599697adc9d4395a93b6774d16f2d00ca91
         });
 	</li>
 </ol>
@@ -31,10 +35,13 @@ Options:
 	<li>direction, right or left</li>
 	<li>duration, scroll duration</li>
 	<li>updateHeight, change height automatically, default: true</li>
+<<<<<<< HEAD
 	<li>usebreadcrumbs, add breadcrumbs links, when set to false, it will be replaced with back button, default: true</li>
 	<li>carouselScroller, scroll menu with fixed height using the mouse, default: false</li>
 	<li>scrollerArea, Scroller area, default: 60</li>
 	<li>scrollerVelocity, Scroller speed, default: 0.3</li>	
+=======
+>>>>>>> c487b599697adc9d4395a93b6774d16f2d00ca91
 </ul>
 
 Screenshots
