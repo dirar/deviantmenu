@@ -44,14 +44,15 @@ var deviantMenu = new Class({
         this.constructMenu();
     },
     constructMenu: function(){
+        var self = this;
         //create a unique id for the ul elements
         this.menuElement.getElements('ul').each(function(el, i){
-            el.set('id', this.options.idPrefix + i);
-        }, this);
+            el.set('id', self.options.idPrefix + i);
+        });
         //create a separat div for each list without children
         this.menuElement.getElements('ul').each(function(el, i){
-            this.parseElements(el, (el.getParent('ul') ? el.getParent('ul').get('id') : null));
-        }, this);
+            self.parseElements(el, (el.getParent('ul') ? el.getParent('ul').get('id') : null));
+        });
         this.menuElement.getElement('ul').destroy();
         this.breadcrumbs = null;
         this.menuWarpper.inject(this.menuElement);
