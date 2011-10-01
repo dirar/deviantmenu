@@ -9,7 +9,8 @@ license:
   - MIT-style license
 
 requires:
-  core/1.2.3:   [Core,Browser,Array,Function,Number,String,Hash,Element,Class,Class_Extras,Element_Style,Fx,Fx_CSS,Event,Element_Event, DomReady]
+  core/1.4: [Core,Browser,Array,Function,Number,String,Hash,Element,Class,Class_Extras,Element_Style,Fx,Fx_CSS,Event,Element_Event, DomReady]
+  more/1.4: [Scroller]
 provides:
   - deviantMenu
 ...
